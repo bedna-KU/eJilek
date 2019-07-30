@@ -18,7 +18,7 @@ fb = open ("user_all_text.txt","w+")
 for i in range (blog_count - 1):
   print ("Read path to blog")
   blog_url = abclinuxuapi.User (user_name).get_blogposts ()[i].url
-  f.write (blog_url)
+  f.write (blog_url + "\n")
   print (str(i +1) + "/" + str (blog_count) + " " + blog_url)
   print ("Read blog")
   text = abclinuxuapi.Blogpost (blog_url, lazy=False).text
