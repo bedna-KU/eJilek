@@ -2,6 +2,8 @@
 Jan Jilek from http://www.abclinuxu.cz/lide/janjilek electronically (GPT-2)
 
 #Import list of blogs from Jan Jilek
+
+```
 import abclinuxuapi
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -15,3 +17,4 @@ for i in range (blog_count - 1):
   f.write(output)
   print (str(i +1) + "/" + str(blog_count) + " " + output)
 f.close()
+```
