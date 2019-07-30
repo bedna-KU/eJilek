@@ -11,10 +11,18 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 blog_count = len (abclinuxuapi.user.User("strider").get_blogposts ())
 
 f = open ("user_out.txt","w+")
+fb = open ("user_out.txt","w+")
 
 for i in range (blog_count - 1):
-  output = abclinuxuapi.user.User ("strider").get_blogposts ()[i].url
-  f.write(output)
-  print (str(i +1) + "/" + str(blog_count) + " " + output)
+  print ("Read path to blog")
+  blog_url = abclinuxuapi.user.User ("strider").get_blogposts ()[i].url
+  f.write(blog_url)
+  print (str(i +1) + "/" + str(blog_count) + " " + blog_url)
+  print ("Read blog")
+  text = abclinuxuapi.Blogpost(output, lazy=False).text
+  print ("Write blog")
+  fb.write (text + "\n")
+  fb.write ("<|endoftext|>\n")
 f.close()
+fb.close()
 ```
